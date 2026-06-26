@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{margin: 0px;
+        display: flex;
+        flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    header{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: aquamarine;
+    box-shadow: 5px 5px 5px black;
+
+}
+img{
+    height: 100px;
+    width: 100px;
+    border: 0px solid black;
+}
+.pimg{
+    height: 500px;
+    width: 500px;
+    border: 0px solid black;
+    
+    
+}
+.pimg:hover {
+
+ animation: size 2s  ease-in-out 1;
+}
+@keyframes size {
+    from{
+        height: 500px;
+        width: 500px;
+    }
+    to{
+      height: 600px;
+        width: 600px;  
+    }
+}
+
+
+
+main{height: 1000px;
+    width: 500px;
+    
+    color: black;
+    text-decoration: none;
+
+}
+.outerdiv{
+    margin: 20px;
+ display: flex;
+        flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.info{
+     display: flex;
+        flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.imgdiv{
+    display: flex;
+
+
+}
+.searchbox{
+    height: 50px;
+    width: 800px;
+    position: absolute;
+    z-index: 1000;
+}
+.search{
+position: relative;
+margin-right: 100px;
+height: 50px;
+width: 800px;
+}
+h1{
+    margin: 20px;
+}
+</style>
+<body>
+    <header>
+<img src="eshop.png" alt="">
+<div class="search"><input type="text" class="searchbox" placeholder="search products">
+<div class="suggest"></div></div>
+<h1 style="background-color: black; color: white; padding: 5px; border-radius: 20px; height: 40px;">cart</h1>
+    </header>
+    <main>
+        <h2 class="otherimg"></h2>
+    </main>
+
+</body>
+<script src="projectapi2.js"></script>
+</html>
