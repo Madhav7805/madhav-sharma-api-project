@@ -49,6 +49,7 @@ fetch(url) // promise
         price.innerText= ` $${el.price} `
         price.style.fontSize="40px"
         price.style.width="100px"
+         price.style.paddingTop="30px"
 
         price.style.color="blue"
         // addcart.innerText="add to cart "
@@ -56,13 +57,21 @@ fetch(url) // promise
         discountpercentage.style.fontSize="50px"
         discountpercentage.style.marginTop="30px"
         discountpercentage.style.width="100px"
-        discountpercentage.style.color="gold"
-        rating.innerText= `rating :${el.rating}`
-        rating.style.color="brown"
-        rating.style.fontSize="30px"
-        stock.innerText=`stock: ${el.stock}`
-        stock.style.color="red"
-        stock.style.fontSize="30px"
+        discountpercentage.style.color="red"
+        discountpercentage.style.fontFamily="sans-serif"
+        // rating.innerText= `rating :${el.rating}`
+        // rating.style.color="brown"
+        // rating.style.fontSize="30px"
+        let a=""
+        for(i=1;i<=5;i++){
+            if(i<=Math.round(el.rating)){
+                a=a+"⭐"
+            }    
+        }
+        rating.innerText= a
+        stock.innerText=`stock: ${el.stock} peices only`
+        stock.style.color="brown"
+        stock.style.fontSize="20px"
         pricediv.append(discountpercentage,price)
          main.append(outer,detail)
          info.append( rating , stock)
@@ -72,6 +81,9 @@ fetch(url) // promise
            let aimg= document.createElement("a")
            aimg.style.border="2px solid black"
            aimg.style.boxShadow="2px 2px 3px black"
+           aimg.style.margin="10px"
+           
+
             otherimg.src= oimg
             aimg.href=oimg
         aimg.append(otherimg)
@@ -132,6 +144,10 @@ datatitle= dataset.map((d)=>{return d.title
         desctn.innerText= el.description
         price.innerText= "$" + el.price
         price.style.color="blue"
+       
+       
+
+
         addcart.innerText="add to cart "
          otherp.append(outerp)
          outerp.append(img,h1,category,desctn,price,addcart)
