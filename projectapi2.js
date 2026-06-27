@@ -6,6 +6,7 @@ url=`https://dummyjson.com/products/${id}`  // url with product id
 main=document.querySelector("main")
 
  let  h1= document.createElement("h1")
+ h1.style.fontFamily="Georgia"
     let image=document.createElement("img")
     image.classList.add("pimg")
     let outer = document.createElement("div")
@@ -14,7 +15,7 @@ main=document.querySelector("main")
     // let addcart = document.createElement("button")
     let info = document.createElement("div")
     info.classList.add("info")
-    let  discountpercentage= document.createElement("h2")
+    let  discountpercentage= document.createElement("h1")
     let  stock= document.createElement("h2")
     let  rating= document.createElement("h2")
     let imgdiv= document.createElement("div")
@@ -25,6 +26,10 @@ main=document.querySelector("main")
  let category = document.createElement("h3")
         outer.classList.add("outerdiv")
         let detail = document.querySelector(".detail")
+        let pricediv = document.createElement("div")
+        pricediv.style.display="flex"
+        // pricediv.style.justifyContent="center"
+        pricediv.style.gap="70px"
        
 
 
@@ -40,18 +45,26 @@ fetch(url) // promise
         image.src=el.thumbnail
         h1.innerText=el.title
         desctn.innerText= el.description
-        price.innerText= "$" + el.price
+        price.innerText= ` $${el.price} `
+        price.style.fontSize="40px"
+        price.style.width="100px"
+
         price.style.color="blue"
         // addcart.innerText="add to cart "
-        discountpercentage.innerText=`discount : ${el.discountPercentage}`
+        discountpercentage.innerText=`-${el.discountPercentage}%`
+        discountpercentage.style.fontSize="50px"
+        discountpercentage.style.marginTop="30px"
+        discountpercentage.style.width="100px"
         discountpercentage.style.color="gold"
         rating.innerText= `rating :${el.rating}`
         rating.style.color="brown"
+        rating.style.fontSize="30px"
         stock.innerText=`stock: ${el.stock}`
         stock.style.color="red"
-       
+        stock.style.fontSize="30px"
+        pricediv.append(discountpercentage,price)
          main.append(outer,detail)
-         info.append(discountpercentage, rating , stock)
+         info.append( rating , stock)
         
  el.images.map((oimg)=>{
         let otherimg = document.createElement("img")
@@ -63,7 +76,7 @@ fetch(url) // promise
         
         })
          outer.append(image)
-         detail.append(h1,category,desctn,price,info,h2,imgdiv)
+         detail.append(h1,category,desctn,pricediv,info,h2,imgdiv)
          
 
 
@@ -83,11 +96,15 @@ fetch(url)
  dataset=[...data.products]
  otherp = document.querySelector(".otherp")
 
-datatitle= data.products.map((d)=>{return d.title
+datatitle= dataset.map((d)=>{return d.title
  })
-// console.log(datatitle)
+// extra info code 
+// let extrainfo = dataset.map((d)=>{
 
- 
+// })
+ // ......
+
+
  dataset.map((el)=>{
     let  h1= document.createElement("h1")
     let img=document.createElement("img")

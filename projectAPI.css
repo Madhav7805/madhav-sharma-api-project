@@ -71,16 +71,17 @@ border-radius: 50px;
     height: 50px;
     width: 80px;
     border-radius: 20px;
-    background-color: rgb(0, 0, 0);
+    background-color: beige;
     text-align: center;
     display: flex;
     align-items: center;
-    box-shadow: 5px 5px 2px white;
+    box-shadow: 3px 3px 2px white;
     
    
 }
 .ainfo{
-     color: white;
+     color: black;
     text-decoration: none;
 margin: 10px;
+font-weight: 900;
 }
