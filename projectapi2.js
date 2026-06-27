@@ -1,38 +1,30 @@
-iddata = new URLSearchParams(window.location.search)
-id = iddata.get('id')
+let iddata = new URLSearchParams(window.location.search)
+let id = iddata.get('id')
 let datatitle= []
-url=`https://dummyjson.com/products/${id}`  // url with product id 
-
-main=document.querySelector("main")
-
- let  h1= document.createElement("h1")
- h1.style.fontFamily="Georgia"
-    let image=document.createElement("img")
+let url=`https://dummyjson.com/products/${id}`  // url with product id 
+let main=document.querySelector("main")
+let  h1= document.createElement("h1")
+     h1.style.fontFamily="Georgia"
+let image=document.createElement("img")
     image.classList.add("pimg")
-    let outer = document.createElement("div")
-    let desctn = document.createElement("h4")
-    let price = document.createElement("h3")
-    // let addcart = document.createElement("button")
-    let info = document.createElement("div")
+let outer = document.createElement("div")
+    outer.classList.add("outerdiv")
+let desctn = document.createElement("h4")
+let price = document.createElement("h3")
+let info = document.createElement("div")
     info.classList.add("info")
-    let  discountpercentage= document.createElement("h1")
-    let  stock= document.createElement("h2")
-    let  rating= document.createElement("h2")
-    let imgdiv= document.createElement("div")
-    
-    // let h2= document.querySelector(".otherimg")
-    // h2.innerText="OTHER IMAGES"
- 
+let discountpercentage= document.createElement("h1")
+let stock= document.createElement("h2")
+let rating= document.createElement("h2")
+let imgdiv= document.createElement("div")
     imgdiv.classList.add("imgdiv")
- let category = document.createElement("h3")
-        outer.classList.add("outerdiv")
-        let detail = document.querySelector(".detail")
-        let pricediv = document.createElement("div")
-        pricediv.style.display="flex"
-        // pricediv.style.justifyContent="center"
-        pricediv.style.gap="70px"
-       
-
+let category = document.createElement("h3")
+let detail = document.querySelector(".detail")
+let pricediv = document.createElement("div")
+    pricediv.style.display="flex"
+    pricediv.style.gap="70px"
+let searchp= document.querySelector(".suggest")
+let input = document.querySelector(".searchbox")       
 
 fetch(url) // promise
     .then((res)=>{
@@ -49,19 +41,14 @@ fetch(url) // promise
         price.innerText= ` $${el.price} `
         price.style.fontSize="40px"
         price.style.width="100px"
-         price.style.paddingTop="30px"
-
+        price.style.paddingTop="30px"
         price.style.color="blue"
-        // addcart.innerText="add to cart "
         discountpercentage.innerText=`-${el.discountPercentage}%`
         discountpercentage.style.fontSize="50px"
         discountpercentage.style.marginTop="30px"
         discountpercentage.style.width="100px"
         discountpercentage.style.color="red"
         discountpercentage.style.fontFamily="sans-serif"
-        // rating.innerText= `rating :${el.rating}`
-        // rating.style.color="brown"
-        // rating.style.fontSize="30px"
         let a=""
         for(i=1;i<=5;i++){
             if(i<=Math.round(el.rating)){
@@ -76,20 +63,20 @@ fetch(url) // promise
          main.append(outer,detail)
          info.append( rating , stock)
         
- el.images.map((oimg)=>{
+    el.images.map((oimg)=>{
         let otherimg = document.createElement("img")
-           let aimg= document.createElement("a")
+        let aimg= document.createElement("a")
            aimg.style.border="2px solid black"
            aimg.style.boxShadow="2px 2px 3px black"
            aimg.style.margin="10px"
            
 
-            otherimg.src= oimg
-            aimg.href=oimg
+        otherimg.src= oimg
+        aimg.href=oimg
         aimg.append(otherimg)
         imgdiv.append(aimg)
         
-        })
+    })
          outer.append(image)
          detail.append(h1,category,desctn,pricediv,info,imgdiv)
          
@@ -107,86 +94,71 @@ url="https://dummyjson.com/products?limit=0"
 fetch(url)
 .then((res)=>{
     return res.json()
-}).then((data)=>{
- dataset=[...data.products]
- otherp = document.querySelector(".otherp")
-
-datatitle= dataset.map((d)=>{return d.title
  })
-// extra info code 
-// let extrainfo = dataset.map((d)=>{
+.then((data)=>{
+    dataset=[...data.products]
+    otherp = document.querySelector(".otherp")
 
-// })
- // ......
-
-
- dataset.map((el)=>{
-    let  h1= document.createElement("h1")
-    let img=document.createElement("img")
-    img.classList.add("opimg")
-    let outerp = document.createElement("a")
-    outerp.href= `projectAPI2.html?id=${el.id} `;
-    let desctn = document.createElement("h4")
-    let price = document.createElement("h3")
-    let addcart = document.createElement("button")
-    addcart.style.marginBottom="10px"
-    addcart.style.backgroundColor="black"
-    addcart.style.color="white"
-
-    
-
-    let category = document.createElement("h3")
-        outerp.classList.add("outerdivp")
-        category.innerText=`category: ${el.category}`
-        category.style.color="crimson"
-        img.src=el.thumbnail
+    dataset.map((el)=>{
+    let h1= document.createElement("h1")
         h1.innerText=el.title
+
+    let img=document.createElement("img")
+        img.classList.add("opimg")
+        img.src=el.thumbnail
+
+    let outerp = document.createElement("a")
+        outerp.href= `projectAPI2.html?id=${el.id} `
+        outerp.classList.add("outerdivp")
+        
+
+    let desctn = document.createElement("h4")
         desctn.innerText= el.description
+
+    let price = document.createElement("h3")
         price.innerText= "$" + el.price
         price.style.color="blue"
-       
-       
 
-
+    let addcart = document.createElement("button")
+        addcart.style.marginBottom="10px"
+        addcart.style.backgroundColor="black"
+        addcart.style.color="white"
         addcart.innerText="add to cart "
-         otherp.append(outerp)
-         outerp.append(img,h1,category,desctn,price,addcart)
 
-         
-        
+    let category = document.createElement("h3")
+        category.innerText=`category: ${el.category}`
+        category.style.color="crimson"
+    otherp.append(outerp)
+        outerp.append(img,h1,category,desctn,price,addcart)        
+    });
+
+})
+
+
+
+// suggestion box .......
+
+input.addEventListener("input" , ()=>{
+    searchp.innerHTML =""
+    if (input.value===""){
+        searchp.innerText =""
+        return
+    }
+
+    let result= dataset.filter((datap) => {
+        return datap.title.toLowerCase().includes(input.value.toLowerCase())
+    });
+    result.forEach(element => {
+        let p = document.createElement("a")
+        p.classList.add("suggestion")
+        p.innerText=element.title
+        p.href=`projectAPI2.html?id=${element.id}`
+        searchp.append(p)
     });
 
 
-})
-let p = document.createElement("p")
-let searchp= document.querySelector(".suggest")
- let input = document.querySelector(".searchbox")
-// console.log(input.value)
- 
- input.addEventListener("input" , ()=>{
-    searchp.innerHTML =""
-     if (input.value===""){
-        searchp.innerText =""
-        return
-     }
-//     console.clear();
-// console.log(input.value)
-let result= datatitle.filter((title) => {
- return title.toLowerCase().includes(input.value.toLowerCase())
+
 });
-result.forEach(element => {
-    let p = document.createElement("p")
-    p.classList.add("suggestion")
-    p.innerText=element
-searchp.append(p)
-
- });
-
-
-
- }
-
- );
 
 
 

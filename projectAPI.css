@@ -65,8 +65,9 @@ border-radius: 50px;
     height: 30px;
     width: 600px;
     background-color: rgb(10, 41, 71);
-   
+    display: block;
     color: white;
+    text-decoration: none;
 }
 .info{
     height: 50px;
