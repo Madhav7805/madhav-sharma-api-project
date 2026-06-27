@@ -19,8 +19,9 @@ main=document.querySelector("main")
     let  stock= document.createElement("h2")
     let  rating= document.createElement("h2")
     let imgdiv= document.createElement("div")
-    let h2= document.querySelector(".otherimg")
-    h2.innerText="OTHER IMAGES"
+    
+    // let h2= document.querySelector(".otherimg")
+    // h2.innerText="OTHER IMAGES"
  
     imgdiv.classList.add("imgdiv")
  let category = document.createElement("h3")
@@ -69,6 +70,8 @@ fetch(url) // promise
  el.images.map((oimg)=>{
         let otherimg = document.createElement("img")
            let aimg= document.createElement("a")
+           aimg.style.border="2px solid black"
+           aimg.style.boxShadow="2px 2px 3px black"
             otherimg.src= oimg
             aimg.href=oimg
         aimg.append(otherimg)
@@ -76,7 +79,7 @@ fetch(url) // promise
         
         })
          outer.append(image)
-         detail.append(h1,category,desctn,pricediv,info,h2,imgdiv)
+         detail.append(h1,category,desctn,pricediv,info,imgdiv)
          
 
 
