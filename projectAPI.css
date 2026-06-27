@@ -1,5 +1,6 @@
 *{
     margin: 0px;
+    /* background-color: beige; */
 }
 
 header{
@@ -9,7 +10,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: aquamarine;
+    background-color: rgb(10, 41, 71);
     box-shadow: 5px 5px 5px black;
 
 }
@@ -22,6 +23,7 @@ main{margin: 20px;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+    
 }
 .outerdiv{
 border: 2px solid black;
@@ -34,7 +36,7 @@ display: flex;
 flex-direction: column;
 justify-content: center; 
  align-items: center;
-
+background-color: rgb(211, 212, 192);
 }
 .searchbox{
     height: 50px;
@@ -51,7 +53,7 @@ position: relative;
 margin-right: 100px;
 height: 50px;
 width: 800px;
-box-shadow: 10px 10px 10px rgb(0, 0, 0);
+box-shadow: 10px 10px 5px rgb(0, 0, 0);
 border: 2px solid black;
 border-radius: 50px;
 }
@@ -61,8 +63,9 @@ border-radius: 50px;
 .suggestion{
     height: 30px;
     width: 600px;
-    background-color: aquamarine;
+    background-color: rgb(10, 41, 71);
     border: 2px solid black;
+    color: white;
 }
 .info{
     height: 50px;
@@ -72,7 +75,7 @@ border-radius: 50px;
     text-align: center;
     display: flex;
     align-items: center;
-    box-shadow: 10px 10px 10px white;
+    box-shadow: 5px 5px 2px white;
     
    
 }

@@ -6,11 +6,13 @@
     <title>Document</title>
 </head>
 <style>
+
     body{margin: 0px;
         display: flex;
         flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #8B5E3C;
     }
     header{
     height: 100px;
@@ -20,7 +22,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: aquamarine;
+    background-color: rgb(10, 41, 71);
     box-shadow: 5px 5px 5px black;
 
 }
@@ -30,13 +32,14 @@ img{
     border: 0px solid black;
 }
 .pimg{
-    height: 500px;
-    width: 500px;
+    height: 800px;
+    width: 800px;
     border: 0px solid black;
+
     
     
 }
-.pimg:hover {
+/* .pimg:hover {
 
  animation: size 2s  ease-in-out 1;
 }
@@ -49,23 +52,33 @@ img{
       height: 600px;
         width: 600px;  
     }
-}
+} */
 
 
 
-main{height: 1000px;
-    width: 500px;
-    
+main{height: 700px;
+    width: 1900px;
+    display: flex;
     color: black;
     text-decoration: none;
+    justify-content:center;
+    margin-right: 300px;
+    background-color: beige;
 
 }
 .outerdiv{
     margin: 20px;
+    height: 500px;
  display: flex;
         flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background-color: antiquewhite; */
+    /* box-shadow: 10px 10px 10px black; */
+    margin-top: 100px;
+     color: black;
+    text-decoration: none;
+    
 }
 .info{
      display: flex;
@@ -94,17 +107,62 @@ width: 800px;
 h1{
     margin: 20px;
 }
+.otherp{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: 20px;
+}
+
+.outerdivp{
+     color: black;
+    text-decoration: none;
+    border: 0px solid black;
+background-color:beige;
+border-radius: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.detail{
+    height: 700px;
+    width: 700px;
+}
+.opimg{
+    height: 300px;
+    width: 300px;
+}
+.suggestion{
+    height: 30px;
+    width: 600px;
+    background-color: rgb(10, 41, 71);
+    border: 2px solid black;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+.suggest{
+    margin: 60px;
+}
 </style>
+
+
 <body>
+
     <header>
-<img src="eshop.png" alt="">
-<div class="search"><input type="text" class="searchbox" placeholder="search products">
-<div class="suggest"></div></div>
-<h1 style="background-color: black; color: white; padding: 5px; border-radius: 20px; height: 40px;">cart</h1>
+
+        <img src="eshop.png" alt="">
+        <div class="search">
+            <input type="text" class="searchbox" placeholder="search products">
+          <div class="suggest"></div>
+        </div>
+        <h1 style="background-color: black; color: white; padding: 5px; border-radius: 20px; height: 40px;">cart</h1>
     </header>
     <main>
-        <h2 class="otherimg"></h2>
+        <div class="detail" style="height: 500px; width: 500px;margin-top: 100px;"></div>
+        <h3 class="otherimg" style="height: 50px;"></h3>
     </main>
+    <div class="otherp"></div>
 
 </body>
 <script src="projectapi2.js"></script>
