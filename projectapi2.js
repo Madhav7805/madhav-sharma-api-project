@@ -1,6 +1,6 @@
 let iddata = new URLSearchParams(window.location.search)
 let id = iddata.get('id')
-let datatitle= []
+let datatitle=[]
 let url=`https://dummyjson.com/products/${id}`  // url with product id 
 let main=document.querySelector("main")
 let  h1= document.createElement("h1")
@@ -24,7 +24,16 @@ let pricediv = document.createElement("div")
     pricediv.style.display="flex"
     pricediv.style.gap="70px"
 let searchp= document.querySelector(".suggest")
-let input = document.querySelector(".searchbox")       
+let input = document.querySelector(".searchbox")   
+let addtocart= document.createElement("button")  
+    addtocart.innerText="ADD TO CART"
+    addtocart.classList.add("addtocart")
+let cartdiv = document.createElement("div")
+    cartdiv.classList.add("cartdiv")
+    // cartdiv.append(addtocart)
+let cartd = JSON.parse(localStorage.getItem("cart")) || []
+let cartlist = document.querySelector(".cartlist")
+
 
 fetch(url) // promise
     .then((res)=>{
@@ -59,9 +68,12 @@ fetch(url) // promise
         stock.innerText=`stock: ${el.stock} peices only`
         stock.style.color="brown"
         stock.style.fontSize="20px"
+
         pricediv.append(discountpercentage,price)
          main.append(outer,detail)
          info.append( rating , stock)
+         cartdiv.append(addtocart)
+         
         
     el.images.map((oimg)=>{
         let otherimg = document.createElement("img")
@@ -76,15 +88,19 @@ fetch(url) // promise
         aimg.append(otherimg)
         imgdiv.append(aimg)
         
-    })
+                })
          outer.append(image)
-         detail.append(h1,category,desctn,pricediv,info,imgdiv)
+         detail.append(h1,category,desctn,pricediv,info,imgdiv,cartdiv)
          
-
-
+    addtocart.addEventListener("click", ()=>{
+        cartd.push(el)
+        localStorage.setItem("cart",JSON.stringify(cartd))
+    alert(`${el.title} is added to your cart `)
+            console.log(cartd)
+                          })
+    cartlist.href=`cartlist.html`
         
-    }
-)
+    })
 
 
 // other products suggestion 
@@ -132,6 +148,9 @@ fetch(url)
         outerp.append(img,h1,category,desctn,price,addcart)        
     });
 
+
+
+
 })
 
 
@@ -160,6 +179,8 @@ input.addEventListener("input" , ()=>{
 
 });
 
+
+// addtocart
 
 
 

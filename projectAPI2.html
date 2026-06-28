@@ -17,7 +17,8 @@
         flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(197, 197, 174);
+    background-color: rgb(229, 229, 225);
+    /* background:linear-gradient(135deg, beige, brown); */
     /* background-color: #8B5E3C; */
     }
     header{
@@ -63,14 +64,14 @@ img{
 
 
 
-main{height: 500px;
-    width: 1000px;
+main{height: 600px;
+    width:fit-content;
     display: flex;
     color: black;
     text-decoration: none;
     justify-content:center;
     margin: 100px;
-    background-color: beige;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     /* border :5px solid black; */
     box-shadow: 0px 0px 10px black;
@@ -93,8 +94,8 @@ main{height: 500px;
 }
 .info{
      display: flex;
-        flex-direction: column;
-        width: 100px;
+        flex-direction: row;
+        width: 400px;
         margin-left: 20px;
     /* justify-content: space-evenly; */
 padding: 0px;
@@ -103,7 +104,8 @@ padding: 0px;
 }
 .imgdiv{
     display: flex;
-
+    margin: 10px;
+    width: fit-content;
 
 }
 .searchbox{
@@ -137,7 +139,7 @@ h1{
      color: black;
     text-decoration: none;
     border: 0px solid black;
-background-color:beige;
+background-color:rgb(255, 255, 255);
 border-radius: 0px;
 display: flex;
 flex-direction: column;
@@ -167,6 +169,21 @@ border-radius: 30px;
 .suggest{
     margin: 60px;
 }
+.addtocart{
+    height: 60px;
+    width: 110px;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: large;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 10px;
+}
+.cartlist{
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+    text-decoration: none;
+}
 </style>
 
 
@@ -179,7 +196,7 @@ border-radius: 30px;
             <input type="text" class="searchbox" placeholder="search products">
           <div class="suggest"></div>
         </div>
-        <h1 style="background-color: beige; color: black; padding: 5px; border-radius: 20px; height: 40px;text-align: center;">cart</h1>
+       <a class="cartlist" style="background-color: beige; color: black; padding: 5px; border-radius: 20px; height: 40px;text-align: center;">cart</a> 
     </header>
     <main>
         <div class="detail" style="height: 500px; width: 500px;"></div>

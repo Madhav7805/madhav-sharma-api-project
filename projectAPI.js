@@ -33,7 +33,7 @@ fetch(url)
             let addcart = document.createElement("button")
                 addcart.style.backgroundColor="black"
                 addcart.style.color="white"
-                addcart.innerText="add to cart "
+                addcart.innerText="BUY NOW "
 
     
 

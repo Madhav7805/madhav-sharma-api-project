@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+    margin: 0px;
+    /* background-color: beige; */
+}
+
+header{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(10, 41, 71);
+    box-shadow: 5px 5px 5px black;
+
+}
+img{
+    height: 100px;
+    width: 100px;
+    border: 0px solid black;
+}
+.searchbox{
+    height: 50px;
+    width: 800px;
+    position: absolute;
+    z-index: 1000;
+    border: 2px solid black;
+border-radius: 50px;
+}
+
+
+.search{
+position: relative;
+margin-right: 100px;
+height: 50px;
+width: 800px;
+box-shadow: 10px 10px 5px rgb(0, 0, 0);
+border: 2px solid black;
+border-radius: 50px;
+}
+.info{
+    height: 50px;
+    width: 80px;
+    border-radius: 20px;
+    background-color: rgb(183, 183, 168);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    box-shadow: 3px 3px 2px white;
+    
+   
+}
+.ainfo{
+     color: black;
+    text-decoration: none;
+margin: 10px;
+font-weight: 900;
+}
+
+main{margin: 20px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+background-color: aliceblue;
+   /* flex-wrap: wrap; */
+   justify-content: space-around;
+    gap: 20px;
+    
+    
+}
+.outerdiv{
+border: 2px solid black;
+border-radius: 20px;
+height: 400px;
+width: 400px;
+box-shadow: 10px 10px 10px black;
+color: black;
+text-decoration: none;
+display: flex;
+flex-direction: column;
+justify-content: center; 
+ align-items: center;
+background-color: rgb(255, 255, 255);
+}
+</style>
+<body>
+    <header>
+<img src="eshop.png" alt="">
+<div class="search"><input type="text" class="searchbox" placeholder="search products">
+<div class="suggest"></div></div>
+<div class="info"><a href="" class="ainfo" style="margin-left: 30px;">info</a></div>
+<div class="info"><a href="" class="ainfo">LOGNIN</a></div>
+<h1 style="background-color: beige; color: black; padding: 5px; border-radius: 20px; height: 40px; box-shadow: 5px 5px 3px white;">cart</h1>
+    </header>
+    <main></main>
+</body>
+<script src="cartlist.js"></script>
+</html>
